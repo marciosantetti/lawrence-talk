@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>.hi[What are the structural determinants of US carbon dioxide emissions? An econometric approach]</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Lawrence University" />
+    <script src="Santetti-IJAE-2021_files/header-attrs-2.11/header-attrs.js"></script>
+    <link href="Santetti-IJAE-2021_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="Santetti-IJAE-2021_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="Santetti-IJAE-2021_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# .hi[What are the structural determinants of US carbon dioxide emissions? An econometric approach]
+## .note[Marcio Santetti]
+### Lawrence University
+### February 2022
+
+---
+
+
+
+
+
+
+class: middle, center, inverse
+
+
+.b[Marcio Santetti]
+
+&lt;img style="border-radius: 30%;" src="jm1_cropped.png" width="150px"/&gt;
+
+.b[Ph.D. Candidate]
+
+.b[University of Utah]
+
+
+[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg> santetti@gmail.com](mailto:santetti@gmail.com) &lt;br&gt;
+[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg> marcio.rbind.io](https://marcio.rbind.io) &lt;br&gt;
+[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> github.com/marciosantetti](https://github.com/marciosantetti)
+
+
+---
+
+# Replicate, replicate, replicate...
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+.hi[For *all* code and slide/style templates]:
+
+&lt;br&gt;
+
+[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> `github.com/marciosantetti/lawrence-university-talk`](https://github.com/marciosantetti/lawrence-university-talk)
+
+
+---
+
+# Reference
+
+
+[Santetti, M. "What are the structural determinants of US carbon dioxide emissions? An econometric approach," 2021, ***International Journal of Applied Economics***, 18(2): 44–80.](https://conferencenow.info/yhsing/applied-economics-journals/IJAE/2021/IJAE%20SEPT%202021%20Santetti%2012-12-2021%20V1.pdf)
+
+--
+
+
+Final chapter of Ph.D. Dissertation
+
+  - "*Three essays on growth, distribution, and the environment*"
+  
+--
+  
+First chapter:
+
+  - "[*Growth, cycles, and residential investment* (Job Market Paper)](https://marcio.rbind.io/jmp/Santetti_GCRI.pdf).
+  
+Second chapter:
+
+  - ["*The US labor share of income: What shocks matter?*"](https://www.tandfonline.com/doi/full/10.1080/00346764.2020.1821907)
+  
+    - with Ivan Mendieta-Muñoz, Codrina Rada, and Rudiger von Arnim, 2020, *** Review of Social Economy***, DOI: 10.1080/00346764.2020.1821907.
+
+
+---
+
+
+# Outline
+
+&lt;br&gt;
+
+
+1. Introduction
+
+2. Literature review
+
+3. Empirical strategy
+
+4. Data
+
+5. Results
+
+6. Conclusions
+
+
+---
+
+layout: false
+class: inverse, middle
+
+# Introduction
+
+
+---
+
+# Introduction
+
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+.hi[Research Questions]:
+
+1. What are the most relevant **structural determinants** of carbon dioxide emissions in the US economy over the post-war period?
+
+2. What is the role of **technological progress** in this setting? Does it lead to emissions mitigation?
+]
+
+--
+
+.pull-right[
+.hi[Methodology]:
+
+1. Theoretically identified Vector Autoregressive (VAR) models, inspired by an extended Kaya identity and the green growth hypothesis;
+
+2. Two different methodologies: one- and two-step VAR procedures
+]
+
+---
+
+# Introduction
+
+
+&lt;br&gt;&lt;br&gt;
+
+.hi[Contributions]:
+
+1. Empirical methodology based on **theoretical assumptions**;
+
+2. Historically, the US economy's technological progress path **does not** support reductions in emissions.
+
+  - Inconsistent with green growth/absolute decoupling scenario.
+  
+--
+
+In addition, novel econometric methodology
+
+  - [`Kilian (2009)`](https://www.aeaweb.org/articles?id=10.1257/aer.99.3.1053);
+  - [`Mendieta-Munoz et al. (2020)`](https://www.tandfonline.com/doi/full/10.1080/00346764.2020.1821907).
+ 
+
+---
+
+layout: false
+class: inverse, middle
+
+# Literature review
+
+---
+
+# Literature review
+
+
+.pull-left[
+
+.hi["Backward-looking"]:
+
+
+* Using historical data to
+investigate short- and long-run **dynamic linkages** between environmental and
+macroeconomic variables.
+
+  * [`Copeland and Taylor (2004)`](https://www.aeaweb.org/articles?id=10.1257/002205104773558047);
+  * [`Soytas et al. (2007)`](https://www.sciencedirect.com/science/article/pii/S0921800906003430);  
+  * [`Hossain (2011)`](https://www.sciencedirect.com/science/article/pii/S030142151100574X);
+  * [`O'Mahony (2013)`](https://www.sciencedirect.com/science/article/pii/S0301421513002504); 
+  * [`Shahiduzzaman and Layton (2015)`](https://www.sciencedirect.com/science/article/pii/S0306261915004468). 
+]
+
+
+--
+
+
+.pull-right[
+
+.hi[Policy-oriented]:
+
+* Only a **big push** with
+(coordinated) public investments towards renewable energy sources and increased carbon
+taxes can trigger a shift to mitigate climate change.
+
+  * [`Nordhaus (2008, 2014)`](https://www.journals.uchicago.edu/doi/full/10.1086/676035); 
+  * [`Heutel (2012)`](https://www.sciencedirect.com/science/article/pii/S1094202511000238);
+  * [`Rezai et al. (2018)`](https://www.sciencedirect.com/science/article/pii/S0921800917312041);
+  * [`Mattauch et al. (2019)`](https://www.aeaweb.org/articles?id=10.1257/aer.20190089);
+  * [`Semieniuk et al. (2021)`](https://www.nature.com/articles/s41558-020-00975-7).
+]
+
+---
+
+# Literature review
+
+&lt;br&gt;
+
+
+.hi[The green growth hypothesis]:
+
+* **Technological progress** and **resource substitution** are the drivers of a concomitant scenario of economic growth and emissions mitigation (**absolute** decoupling).
+
+  * [`OECD (2011)`](https://www.oecd.org/greengrowth/48012345.pdf);
+  * [`UNEP (2011)`](https://www.unep.org/resources/report/towards-green-economy-pathways-sustainable-development-and-poverty-eradication-10);
+  * [`World Bank (2012)`](https://openknowledge.worldbank.org/handle/10986/6058);
+  * [`Jacobs (2013)`](https://www.google.com/books/edition/The_Handbook_of_Global_Climate_and_Envir/JYuwDQAAQBAJ?hl=en&amp;gbpv=1&amp;dq=falkner+green+growth+handbook&amp;pg=PR8&amp;printsec=frontcover);
+  * [`Hickel and Kallis (2020)`](https://www.tandfonline.com/doi/abs/10.1080/13563467.2019.1598964).
+  
+---
+
+# Literature review
+
+[`OECD (2011)`](https://www.oecd.org/greengrowth/48012345.pdf):
+
+.center[
+
+&lt;img src="gg1.png", width = "50%"&gt;
+
+]
+
+---
+
+# Literature review
+
+[`World Bank (2012)`](https://openknowledge.worldbank.org/handle/10986/6058):
+
+.center[
+&lt;img src="gg2.png", width = "75%"&gt;
+]
+
+---
+
+# Literature review
+
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+.hi[Relative decoupling]
+
+* When the growth rate of the environmentally relevant variable is less than GDP growth for a given period (OECD, 2002).
+
+  - `\(\dfrac{\text{Emissions/Energy use}}{\text{Output}} &lt; 0\)`
+
+]
+
+--
+
+.pull-right[
+.hi[Absolute decoupling]
+
+* Despite GDP growth, when the growth rate of the environmentally damaging variable is zero or negative (OECD, 2002).
+]
+
+
+---
+
+layout: false
+class: inverse, middle
+
+# Empirical strategy
+
+---
+
+# Empirical strategy
+
+
+.pull-left[
+
+Carbon emissions, `\(\Phi_t\)`, are a product of the interactions of:
+
+* the **state of the business cycle**, `\(Y_t\)`;
+
+* **aggregate primary energy demand** 
+
+  * including both renewable and non-renewable sources, `\(E_t\)`;
+
+* **population growth**, `\(P_t\)`;
+
+* and the **number of employed workers**, `\(L_t\)`.
+]
+
+--
+
+.pull-right[
+
+ An extended .hi[Kaya identity]:
+
+$$ \Phi_t \equiv \dfrac{Y_t}{L_t} \cdot \dfrac{E_t}{Y_t} \cdot \dfrac{\Phi_t}{E_t} \cdot \dfrac{L_t}{P_t} \cdot P_t  $$
+
+where
+
+* `\(Y_t/L_t\)`: labor productivity;
+
+* `\(E_t/Y_t\)`: energy intensity of output;
+
+* `\(\Phi_t/E_t\)`: emissions intensity of energy use;
+
+* `\(L_t/P_t\)`: employment rate.]
+
+
+---
+
+# Empirical strategy
+
+
+
+Technology plays a *key role* for both **relative** and **absolute** decoupling scenarios.
+
+--
+
+&lt;br&gt;
+
+.pull-left[
+
+Decomposing energy intensity:
+
+`$$\dfrac{E_t}{Y_t} \equiv \dfrac{L_t}{Y_t} \cdot \dfrac{E_t}{L_t}$$`
+where
+* `\(E_t/L_t\)`: energy-labor ratio
+
+]
+
+
+--
+
+.pull-right[
+
+In growth rates:
+
+`$$\hat{\eta} \equiv \hat{\epsilon} - \hat{\xi}$$`
+whenever labor productivity growth `\((\hat{\xi})\)` is *faster* than the growth of the energy-labor ratio `\((\hat{\epsilon})\)`, there is a **relative** decoupling between energy use and output `\((\hat{\eta}&lt;0)\)`.
+
+]
+
+---
+
+# Empirical strategy
+
+&lt;br&gt;&lt;br&gt;
+
+.pull-left[
+
+Decomposing emissions intensity of energy use:
+`$$\dfrac{\Phi_t}{E_t} \equiv \dfrac{\Phi_t}{L_t} \cdot \dfrac{L_t}{E_t}$$`
+where
+* `\(\Phi_t/L_t\)`: emissions per worker
+
+]
+
+--
+
+.pull-right[
+
+In growth rates:
+
+`$$\hat{\Phi} \equiv \hat{\mu} + \hat{Y} - \hat{\xi}$$`
+whenever labor productivity  grows *faster* than the sum of the growth rates of emissions per worker `\((\hat{\mu})\)` and output `\((\hat{Y})\)`, there is an **absolute** decoupling `\((\hat{\Phi}&lt;0)\)`.
+
+]
+
+
+
+---
+
+
+# Empirical strategy
+
+
+&lt;br&gt;
+
+* The green growth hypothesis claims that *technological progress* is the .hi[main driver] of a possible absolute decoupling;
+
+&lt;br&gt;
+
+--
+
+* Along with the *extended* Kaya identity, this view inspires the .hi[identification] of VAR models;
+
+&lt;br&gt;
+
+--
+
+* Technological progress `\(\implies\)` more efficient use of traditional energy sources and/or use of renewable sources `\(\implies\)` increasing employment in new industries `\(\implies\)` higher output/decreased emissions.
+
+
+---
+
+# Empirical strategy
+
+
+### VAR identification:
+
+.center[
+Short-run causal ordering: `\(X_t\)`  `\(\rightarrow\)` `\(E_t\)` `\(\rightarrow\)` `\(P_t\)` `\(\rightarrow\)` `\(Y_t\)` `\(\rightarrow\)` `\(\Phi_t\)` 
+
+Endogenous regressors vector: `\(\nu_t = (X_t, E_t, R_t, P_t, Y_t, \Phi_t)'\)`
+
+Accounting for non-renewable `\((E_t)\)` and renewable `\((R_t)\)` energy use.
+]
+
+--
+
+.pull-left[
+* A VAR(*p*) model:
+`$$A\nu_t = \alpha + \sum_{i=1}^{p} A_{i} \nu_{t-i} + u_{t}$$`
+* Reduced-form residuals
+`$$\varepsilon_t = A^{-1}u_t$$`
+]
+
+.pull-right[
+`$$\small \varepsilon_{t} \equiv
+\left[ \begin{array}{c}
+\varepsilon_t^{X} \\
+\varepsilon_t^{E} \\
+\varepsilon_t^{R} \\
+\varepsilon_t^{P} \\
+\varepsilon_t^{Y} \\
+\varepsilon_t^{\Phi} \end{array} \right]
+=
+\left[ \begin{array}{cccccc}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+a_{21} &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+a_{31} &amp; a_{32} &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+a_{41} &amp; a_{42} &amp; a_{43} &amp; 1 &amp; 0 &amp; 0 \\
+a_{51} &amp; a_{52} &amp; a_{53} &amp; a_{54} &amp; 1 &amp; 0 \\
+a_{61} &amp; a_{62} &amp; a_{63} &amp; a_{64} &amp; a_{65} &amp; 1 \end{array} \right]
+\left[ \begin{array}{c}
+u_t^{\text{X}} \\
+u_t^{\text{E}} \\
+u_t^{\text{R}} \\
+u_t^{\text{P}} \\ 
+u_t^{\text{Y}} \\ 
+u_t^{\Phi} \end{array} \right]$$`
+]
+
+---
+
+# Empirical strategy
+
+.hi[Two recursive VAR estimation methodologies]:
+
+.pull-left[
+* A **single-step** procedure:
+
+  * Directly computing the response of emissions to **all** structural shocks, estimating a 6-variable VAR.
+]
+
+--
+
+.pull-right[
+* A **two-step** procedure:
+  
+  * Estimating a first-step VAR **without** emissions, retrieving its residuals (shocks);
+  * In a *second step*, computing the response of emissions to these structural shocks.
+  * Why **two steps**? To avoid potential *endogenous interactions* between emissions and the other variables, possibly affecting the impulse-response analysis.
+
+]
+
+
+---
+
+layout: false
+class: inverse, middle
+
+# Data
+
+---
+
+
+# Data
+
+* **Sample period**: 1949&amp;#8212;2018
+
+
+---
+
+
+# Data
+
+.hi[Variables]:
+  
+* Aggregate carbon dioxide emissions (US EIA) &amp;#8212; million metric tons of carbon dioxide;
+  
+--
+  
+* Aggregate primary energy use (quadrillion Btu):
+      
+      * Non-renewable energy use (US EIA) - fossil fuels, nuclear energy;
+      * Renewable energy use (US EIA) - hydroelectric, geothermal, wind, solar, and biomass.
+      
+--
+  
+* Employment-to-population ratio (FRED) &amp;#8212; %;
+
+--
+  
+* Real GDP (FRED) &amp;#8212; billions of chained 2012 dollars;
+
+--
+  
+* Technology variables: 
+  
+      * labor productivity (output per hour, business sector, FRED) &amp;#8212; baseline; 
+      * aggregate capital stock (1950&amp;#8212;2017, PWT) &amp;#8212; millions of 2011 US dollars;
+      * total factor productivity (1954&amp;#8212;2017, PWT) &amp;#8212; 2011=1.
+      
+    
+---
+
+# Data
+
+&lt;br&gt;
+
+&lt;img src="Santetti-IJAE-2021_files/figure-html/unnamed-chunk-2-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+
+# Data
+
+&lt;img src="Santetti-IJAE-2021_files/figure-html/unnamed-chunk-3-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+ 
+# Results
+
+.pull-left[
+
+.hi[Baseline VAR models]:
+
+* Single-step VAR: estimated *in levels* 
+
+  * 3 lags
+  * no serial correlation nor heteroskedasticity;
+
+* Two-step VAR: estimated *in levels*
+
+  * 4 lags
+  * no serial correlation nor heteroskedasticity;
+
+* Labor productivity as the technology variable.
+
+]
+
+--
+
+.pull-right[
+
+.hi[Robustness checks]:
+
+* Single and two-step VAR models
+
+  * in *first-differences* and 
+  * with data *de-trended* with the HP filter;
+
+* Models with two different technology *proxy* variables: 
+
+  * aggregate capital stock and 
+  * total factor productivity (TFP).
+
+]
+
+---
+
+layout: false
+class: inverse, middle
+
+# Results
+
+---
+
+# Results
+
+* Single-step VAR (only carbon dioxide responses):
+
+&lt;img src="Santetti-IJAE-2021_files/figure-html/unnamed-chunk-4-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Results
+
+* Two-step VAR (only carbon dioxide responses):
+
+
+&lt;img src="Santetti-IJAE-2021_files/figure-html/unnamed-chunk-5-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# Results
+
+* Robustness checks for two-step VAR (non-renewable energy shock - black; technology shock - gray):
+
+
+&lt;img src="Santetti-IJAE-2021_files/figure-html/unnamed-chunk-6-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+layout: false
+class: inverse, middle
+
+# Conclusions
+
+---
+
+# Conclusions
+
+
+
+* Most of the estimated models compute both **non-renewable** and **technology** shocks  significantly affecting carbon dioxide emissions over the short-run for the US economy;
+
+--
+
+* While the baseline single-step procedure only predicts a non-renewable energy shock as statistically significant, the two-step baseline model includes the **technology** shock as significant;
+
+--
+
+* Despite the historical positive growth rates of both labor and energy productivity, the US economy's  historical growth path has neither been translated into a **decreased** use of "dirty" energy sources, nor into a significant use of **renewable** energy sources;
+
+--
+
+* In addition to these results, key **decoupling** variables have shown weak
+growth paths over the sample period. Energy intensity, output intensity of energy use, emissions per
+worker, and the energy-labor ratio levels are **far** from those observed by
+countries experiencing absolute decoupling, such as France, Italy, and the
+United Kingdom.
+
+
+---
+
+layout: false
+class: inverse, middle
+
+# .b[Thank you!]
+
+
+---
+exclude: true
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
