@@ -12,4 +12,4 @@ Template mainly inspired by [Ed Rubin](https://github.com/edrubin)'s lecture not
 
 - "*What are the structural determinants of US carbon dioxide emissions? An econometric approach*," 02/16/2022
 
-**Slides**: [html]()
+**Slides**: [PDF](https://github.com/marciosantetti/lawrence-university-talk/blob/main/Santetti-IJAE/Santetti-IJAE-2021.pdf)
